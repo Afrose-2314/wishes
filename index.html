@@ -6,34 +6,17 @@
   <title>Teachers' Day Wishes</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- College Strip -->
-  <div class="college-strip">
-    <div class="college-left">
-      Prince Shri Venkateswara Arts & Science College
-    </div>
-    <div class="college-right">
-      <img src="logo.jpg" alt="Coding Club Logo" class="strip-logo">
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container">
-    <h2>Teachers' Day Wishes 💌</h2>
-    <p>Welcome, <span id="userName">Friend</span>! Write your teacher's name to send a wish:</p>
-    <input type="text" id="teacherName" placeholder="Enter Teacher's Name">
-    <button onclick="createWish()">Send Wish</button>
-
-    <!-- Envelope Animation -->
-    <div class="envelope" id="envelope">
+<body class="main-body">
+  <div class="envelope-container">
+    <div class="envelope" onclick="openEnvelope()">
       <div class="flap"></div>
       <div class="letter">
-        <p id="wishText"></p>
+        <h2 id="wishText"></h2>
+        <p class="quote"></p>
+        <p class="from">💖 With Love from Coding Club 💻</p>
       </div>
     </div>
-
-    <h3>🌟 Inspiring Teacher Quotes 🌟</h3>
-    <p id="quote">"The art of teaching is the art of assisting discovery." – Mark Van Doren</p>
+    <p class="click-text">Click the envelope to reveal your wish 🎉</p>
   </div>
 
   <script src="script.js"></script>
