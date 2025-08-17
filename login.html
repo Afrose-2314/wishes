@@ -8,25 +8,13 @@
 </head>
 <body class="login-body">
   <div class="login-container">
-    <h1>💐 Teachers' Day Wishes 💐</h1>
-    <p class="sub-text">Enter your name to receive a surprise wish 🎁</p>
-    <form onsubmit="return saveName()">
+    <h1>🎉 Teachers' Day Wishes 🎉</h1>
+    <p>Enter your name to unlock your special wish 💌</p>
+    <form onsubmit="return goToWishes()">
       <input type="text" id="username" placeholder="Enter your name" required>
-      <button type="submit">Send Wishes ✉️</button>
+      <button type="submit">Open Wishes ✨</button>
     </form>
   </div>
-
-  <script>
-    function saveName() {
-      const name = document.getElementById("username").value.trim();
-      if (name === "") {
-        alert("Please enter your name!");
-        return false;
-      }
-      localStorage.setItem("username", name); 
-      window.location.href = "index.html"; 
-      return false; 
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
