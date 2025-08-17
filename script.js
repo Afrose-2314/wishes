@@ -1,21 +1,18 @@
-function generateWish() {
-  const name = document.getElementById("teacherName").value.trim();
+document.getElementById("wishBtn").addEventListener("click", function () {
+  const teacherName = document.getElementById("teacherName").value.trim();
   const letter = document.getElementById("letter");
   const wishMessage = document.getElementById("wishMessage");
 
-  if (name === "") {
-    alert("Please enter your teacher's name 😊");
+  if (teacherName === "") {
+    alert("Please enter your teacher's name!");
     return;
   }
 
-  // Set the personalized message
-  wishMessage.innerHTML = `Dear <b>${name}</b>,<br>
-  Wishing you a very <b>Happy Teachers' Day</b>! 🌸📚<br>
-  Thank you for inspiring and guiding us always.`;
+  // Create personalized wish
+  wishMessage.innerHTML = `Dear <b>${teacherName}</b>,<br>
+    Wishing you a very <span style="color:#ffcc00;">Happy Teachers' Day!</span> 🎉<br>
+    Thank you for your guidance and support. 💐`;
 
-  // Show and animate the letter
-  letter.style.display = "block";
-  setTimeout(() => {
-    letter.classList.add("open");
-  }, 100);
-}
+  // Show letter animation
+  letter.classList.add("show");
+});
