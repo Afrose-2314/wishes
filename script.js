@@ -1,35 +1,35 @@
-// Handle Login
-function login() {
-  const name = document.getElementById("userName").value.trim();
+// Login redirect
+function goToWishes() {
+  const name = document.getElementById("username").value.trim();
   if (name) {
-    localStorage.setItem("userName", name);
+    localStorage.setItem("username", name);
     window.location.href = "index.html";
-  } else {
-    alert("Please enter your name!");
   }
+  return false;
 }
 
-// Quotes for Teachers
-const quotes = [
-  "A teacher takes a hand, opens a mind, and touches a heart.",
-  "Teaching is the profession that teaches all other professions.",
-  "Good teachers inspire hope, ignite the imagination, and instill a love of learning.",
-  "A great teacher is like a candle—it consumes itself to light the way for others.",
-  "Teachers plant seeds of knowledge that grow forever."
+// Wishes data
+const wishes = [
+  "Happy Teachers' Day! 🌸 Your wisdom lights our path.",
+  "To the best guide and mentor – Thank you for everything 🙏",
+  "A teacher takes a hand, opens a mind, and touches a heart ❤️",
+  "Teaching is the greatest act of optimism 🌟",
+  "Happy Teachers’ Day! We are forever grateful to you 📚"
 ];
 
-// Show Wish with Name
+// On wishes page load
 window.onload = function () {
+  const name = localStorage.getItem("username");
   if (document.getElementById("wishText")) {
-    const name = localStorage.getItem("userName") || "Dear Teacher";
     document.getElementById("wishText").innerText =
-      `Happy Teachers' Day, ${name}! 🎉`;
-    document.querySelector(".quote").innerText =
-      quotes[Math.floor(Math.random() * quotes.length)];
+      "Dear " + name + ",\n" + wishes[Math.floor(Math.random() * wishes.length)];
   }
 };
 
-// Envelope Animation
+// Envelope open animation
 function openEnvelope() {
-  document.querySelector(".envelope").classList.add("open");
+  const envelope = document.querySelector(".envelope");
+  if (!envelope.classList.contains("open")) {
+    envelope.classList.add("open");
+  }
 }
