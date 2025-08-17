@@ -1,123 +1,114 @@
-/* Common Body */
-body {
+/* General Body Styling */
+body.main-body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
   text-align: center;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
 }
 
-/* Login Page */
-.login-body {
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-}
-.login-container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-  width: 300px;
-  animation: fadeIn 1s ease-in-out;
-}
-.login-container h1 {
-  color: #6a11cb;
-  margin-bottom: 10px;
-}
-.login-container input {
-  width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-.login-container button {
-  width: 100%;
-  padding: 12px;
-  background: #6a11cb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.login-container button:hover {
-  background: #2575fc;
-}
-
-/* Envelope Page */
+/* Envelope Container */
 .envelope-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.envelope {
   position: relative;
+  text-align: center;
+}
+
+/* Envelope Box */
+.envelope {
   width: 280px;
   height: 180px;
-  background: #ff9999;
-  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #d4a373;
+  border-radius: 6px;
+  position: relative;
   cursor: pointer;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-  transition: transform 0.6s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out;
 }
+
 .envelope:hover {
   transform: scale(1.05);
 }
+
+/* Flap */
 .flap {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
-  background: #ff6666;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 50%;
+  background: #f4a261;
+  border-bottom: 2px solid #d4a373;
+  border-radius: 6px 6px 0 0;
   transform-origin: top;
-  transition: transform 1s;
+  transition: transform 0.6s ease-in-out;
 }
+
+/* Letter Inside */
 .letter {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: #fff;
-  border-radius: 0 0 10px 10px;
-  transform: translateY(100%);
-  transition: transform 1s;
+  width: 90%;
+  left: 5%;
+  height: 100%;
+  background: #fffdf5;
+  border-radius: 4px;
   padding: 15px;
-}
-.letter h2 {
-  margin: 0;
-  color: #ff4b2b;
-  font-size: 20px;
-}
-.from {
-  margin-top: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #444;
-}
-.click-text {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #333;
-  font-style: italic;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.6s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
-/* Animations */
-.open .flap {
-  transform: rotateX(-180deg);
+/* Wish Text */
+.letter h2 {
+  color: #d62828;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
 }
-.open .letter {
-  transform: translateY(0);
+
+/* Quote */
+.letter .quote {
+  font-style: italic;
+  font-size: 14px;
+  margin: 10px 0;
+  color: #333;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+
+/* From Text */
+.letter .from {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #264653;
+  font-weight: 600;
+}
+
+/* Click Instruction */
+.click-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #444;
+  animation: blink 1.5s infinite;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Open Envelope Animation */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  transform: translateY(0%);
 }
