@@ -1,0 +1,142 @@
+/* Reset + Base */
+*{box-sizing:border-box}html,body{height:100%}
+:root{
+  --bg1:#0f1020; --bg2:#1b2a4a; --ac:#7dd3fc; --ac2:#a78bfa; --txt:#eaf2ff;
+  --card:#0f172a; --muted:#90a4c1; --glow:0 0 24px rgba(125,211,252,.35);
+}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  color:var(--txt);
+  background: radial-gradient(1200px 600px at 10% -10%, #1e3a8a33, transparent),
+              radial-gradient(1200px 600px at 110% 10%, #6d28d933, transparent),
+              linear-gradient(135deg,var(--bg1),var(--bg2));
+}
+
+/* Topbar */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  backdrop-filter: blur(8px);
+  background:linear-gradient(90deg,#0b1224cc,#111c36cc);
+  border-bottom:1px solid #2d3b61;
+}
+.brand{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:1100px;margin:0 auto}
+.logo{width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 0 8px #0007)}
+.titles h1{font-size:16px;margin:0}
+.club{margin:2px 0 0;color:var(--muted);font-weight:600;letter-spacing:.3px}
+
+/* Container */
+.container{max-width:1100px;margin:24px auto;padding:0 16px}
+.card{
+  background:linear-gradient(180deg,#0b1224,#0a1226);
+  border:1px solid #223357; border-radius:20px; padding:22px; box-shadow:var(--glow);
+}
+.card h2{margin:0 0 6px;font-size:24px}
+.hint{margin:0 0 18px;color:var(--muted)}
+
+/* Form */
+.form{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+input{
+  flex:1 1 320px; padding:12px 14px; border-radius:12px; border:1px solid #2b3e6b;
+  background:#0b1530; color:var(--txt); outline:none; transition:.2s;
+}
+input:focus{border-color:#3b82f6; box-shadow:0 0 0 4px #3b82f633}
+.btn{border:1px solid #294071; background:#0f1c3f; color:var(--txt); padding:12px 16px;
+  border-radius:12px; cursor:pointer; font-weight:700; letter-spacing:.3px; transition:.2s}
+.btn:hover{transform:translateY(-1px); box-shadow:var(--glow)}
+.btn.primary{background:linear-gradient(90deg,#3b82f6,#8b5cf6); border:none}
+.btn.ghost{background:transparent}
+
+/* Stage (envelope scene) */
+.stage{display:grid;place-items:center;margin:14px 0 8px}
+.envelope{
+  position:relative; width:320px; height:220px; perspective:1200px;
+  transform-style:preserve-3d; animation:pop .6s ease-out both;
+}
+@keyframes pop{from{transform:scale(.9); opacity:.0}to{transform:scale(1); opacity:1}}
+
+.env-back{
+  position:absolute; inset:0; border-radius:14px; background:linear-gradient(180deg,#102245,#0d1a33);
+  border:1px solid #2d3b61; box-shadow:0 12px 40px #0006 inset, 0 10px 30px #0009;
+}
+.env-front{
+  position:absolute; inset:0; pointer-events:none;
+}
+.flap{
+  position:absolute; left:0; right:0; top:0; height:0; padding-bottom:58%;
+  background:linear-gradient(180deg,#122a57,#0c1c3d); clip-path:polygon(0 0,100% 0,50% 100%);
+  border-top-left-radius:14px; border-top-right-radius:14px; transform-origin:top;
+  transform:rotateX(0deg);
+  border:1px solid #2d3b61; border-bottom:none; box-shadow:0 6px 18px #0007 inset;
+}
+.stamp{
+  position:absolute; right:14px; top:14px; width:44px; height:44px; display:grid; place-items:center;
+  background:#0f2b56; border:1px dashed #3a5fa0; border-radius:6px; font-size:20px; opacity:.9
+}
+.seal{
+  position:absolute; left:18px; bottom:14px; font-weight:800; letter-spacing:1px;
+  color:#9cc1ff; text-shadow:0 2px 14px #87cefa55;
+}
+
+/* Letter */
+.letter{
+  position:absolute; left:14px; right:14px; top:14px; height:0; overflow:hidden;
+  transform:translateZ(10px);
+}
+.letter.open{
+  animation:slideOut 1.6s ease forwards .25s;
+}
+@keyframes slideOut{
+  0%{height:0; transform:translateY(0)}
+  50%{height:210px; transform:translateY(-40px)}
+  100%{height:260px; transform:translateY(-80px)}
+}
+.letter-inner{
+  height:260px; background:linear-gradient(180deg,#fff,#f7fbff); color:#0e1730;
+  border-radius:12px; border:1px solid #b9d3ff; padding:16px 16px 18px;
+  box-shadow:0 10px 30px #0006;
+  position:relative;
+  background-image:
+    radial-gradient(6px 6px at 8px 8px, #c6dbff 25%, transparent 26%),
+    repeating-linear-gradient(180deg, transparent, transparent 30px, #eaf2ff 31px, #eaf2ff 32px);
+}
+.letter-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.from{font-weight:800;color:#0e2a6a}
+.date{font-variant-numeric:tabular-nums;color:#37539c}
+.to{margin:4px 0 8px;font-size:18px}
+.quote{font-size:16px;line-height:1.55;margin:8px 0 14px}
+.closing{color:#1b316f}
+
+/* States */
+.envelope.open .flap{
+  animation:flip 1s ease forwards;
+}
+@keyframes flip{
+  0%{transform:rotateX(0deg)}
+  45%{transform:rotateX(-140deg)}
+  100%{transform:rotateX(-165deg)}
+}
+
+/* Confetti */
+.confetti{
+  position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:100;
+}
+.piece{
+  position:absolute; top:-10px; width:8px; height:14px; border-radius:2px;
+  background:linear-gradient(180deg,#93c5fd,#c4b5fd);
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(120vh) rotate(540deg)}
+}
+
+/* Footer */
+.foot{text-align:center;color:#9db6e9;margin:18px 0;font-size:14px}
+
+/* Share tips */
+.share-tips{margin-top:8px;color:var(--muted);font-size:14px}
+
+/* Responsive */
+@media (max-width:480px){
+  .envelope{width:92vw; height:64vw;}
+  .letter.open{animation:slideOut 1.5s ease forwards .2s}
+}
