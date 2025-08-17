@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teachers' Day Wishes - Coding Club</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers' Day Wishes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="college-info">
-      <img src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png" 
-           alt="College Strip" class="college-strip" />
-      <h2 class="college-name">Prince Shri Venkateshwara Arts & Science College</h2>
+  <!-- College Strip -->
+  <div class="college-strip">
+    <div class="college-left">
+      Prince Shri Venkateswara Arts & Science College
     </div>
-    <div class="club-logo">
-      <img src="logo.jpg" alt="Coding Club Logo" class="logo" />
-      <h1>Coding Club - BCA Dept</h1>
-    </div>
-  </header>
-
-  <!-- Wishes Container -->
-  <div class="container">
-    <h2>Teachers' Day Wishes 💌</h2>
-    <p>Welcome, <span id="displayUser"></span>! Write your teacher's name to send a wish:</p>
-    <input type="text" id="teacherName" placeholder="Enter Teacher's Name" />
-    <button id="wishBtn">Send Wish</button>
-    
-    <!-- Envelope Animation -->
-    <div class="letter" id="letter">
-      <div class="envelope"></div>
-      <div class="paper">
-        <p id="wishMessage"></p>
-      </div>
+    <div class="college-right">
+      <img src="logo.jpg" alt="Coding Club Logo" class="strip-logo">
     </div>
   </div>
 
-  <!-- Inspirational Quotes -->
-  <section class="quotes">
-    <h2>🌟 Inspiring Teacher Quotes 🌟</h2>
-    <div class="quote-box">
-      <p id="quoteText">"The art of teaching is the art of assisting discovery." – Mark Van Doren</p>
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Teachers' Day Wishes 💌</h2>
+    <p>Welcome, <span id="userName">Friend</span>! Write your teacher's name to send a wish:</p>
+    <input type="text" id="teacherName" placeholder="Enter Teacher's Name">
+    <button onclick="createWish()">Send Wish</button>
+
+    <!-- Envelope Animation -->
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="letter">
+        <p id="wishText"></p>
+      </div>
     </div>
-  </section>
+
+    <h3>🌟 Inspiring Teacher Quotes 🌟</h3>
+    <p id="quote">"The art of teaching is the art of assisting discovery." – Mark Van Doren</p>
+  </div>
 
   <script src="script.js"></script>
 </body>
