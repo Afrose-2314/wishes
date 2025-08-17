@@ -1,4 +1,4 @@
-/* General Reset */
+/* 🌸 General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Login Page */
+/* ✨ Login Page */
 .login-body {
   height: 100vh;
   display: flex;
@@ -16,44 +16,63 @@
 }
 
 .login-container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   text-align: center;
+  width: 350px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.login-container h2 {
-  margin-bottom: 10px;
+.login-container h1 {
+  margin-bottom: 15px;
   color: #ff4b5c;
+  font-size: 24px;
+}
+
+.login-container p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #444;
 }
 
 .login-container input {
-  padding: 10px;
-  width: 80%;
+  padding: 12px;
+  width: 100%;
   margin-top: 10px;
   border: 2px solid #ff4b5c;
-  border-radius: 10px;
+  border-radius: 12px;
   outline: none;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #ff1e3c;
+  box-shadow: 0 0 8px rgba(255, 75, 92, 0.5);
 }
 
 .login-container button {
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 12px 25px;
   border: none;
   background: #ff4b5c;
-  color: white;
+  color: #fff;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 .login-container button:hover {
   background: #ff1e3c;
+  transform: scale(1.05);
 }
 
-/* Main Wishes Page */
+/* 🌟 Main Wishes Page */
 .main-body {
   height: 100vh;
   display: flex;
@@ -61,6 +80,8 @@
   align-items: center;
   background: linear-gradient(135deg, #89f7fe, #66a6ff);
   flex-direction: column;
+  text-align: center;
+  padding: 20px;
 }
 
 .envelope-container {
@@ -68,64 +89,91 @@
 }
 
 .envelope {
-  width: 300px;
-  height: 200px;
+  width: 320px;
+  height: 220px;
   background: #ff4b5c;
   position: relative;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.5s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 .envelope:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/* ✉️ Envelope Flap */
 .flap {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 55%;
   background: #e63946;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transition: transform 0.6s;
+  transform-origin: top;
 }
 
+.envelope.open .flap {
+  transform: rotateX(-180deg);
+}
+
+/* 📜 Letter Inside */
 .letter {
-  background: white;
+  background: #fff;
   width: 90%;
   height: 90%;
   margin: 10% auto;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 20px;
   transform: translateY(100%);
-  transition: transform 1s;
+  transition: transform 1s ease-in-out;
   overflow-y: auto;
-}
-
-.letter h2 {
-  color: #ff4b5c;
-}
-
-.letter .quote {
-  margin-top: 15px;
-  font-style: italic;
-  color: #333;
-}
-
-.letter .from {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #0077b6;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .envelope.open .letter {
   transform: translateY(0);
 }
 
+.letter h2 {
+  color: #ff4b5c;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.letter .quote {
+  margin-top: 10px;
+  font-style: italic;
+  color: #333;
+  line-height: 1.4;
+}
+
+.letter .from {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+/* 🎉 Bottom text */
 .click-text {
   margin-top: 20px;
   font-weight: bold;
-  color: #333;
+  font-size: 16px;
+  color: #fff;
+  animation: bounce 1.5s infinite;
+}
+
+/* 🔥 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
