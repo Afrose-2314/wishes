@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teachers' Day Wishes</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers' Day Wishes - Coding Club</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header with College Strip + College Name + Logo -->
+  <header class="header">
+    <div class="college-info">
+      <img src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png" 
+           alt="College Strip" class="college-strip" />
+      <h2 class="college-name">Prince Shri Venkateshwara Arts & Science College</h2>
+    </div>
+    <div class="club-logo">
+      <img src="logo.jpg" alt="Coding Club Logo" />
+      <h1>Coding Club - BCA Dept</h1>
+    </div>
+  </header>
+
+  <!-- Wishes Container -->
   <div class="container">
-    <!-- Logo and header -->
-    <div class="header">
-      <img src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png" alt="College Logo" class="logo">
-      <h1>Coding Club - PSVASC</h1>
-    </div>
-
-    <!-- Input box -->
-    <div class="input-box">
-      <input type="text" id="teacherName" placeholder="Enter Teacher's Name">
-      <button onclick="generateWish()">Send Wish</button>
-    </div>
-
-    <!-- Animated Letter -->
+    <h2>Teachers' Day Wishes 💌</h2>
+    <p>Enter your teacher's name to generate a personalized wish</p>
+    <input type="text" id="teacherName" placeholder="Enter Teacher's Name" />
+    <button onclick="generateWish()">Send Wish</button>
+    
+    <!-- Letter Animation -->
     <div class="letter" id="letter">
-      <div class="letter-content" id="letterContent"></div>
+      <div class="envelope"></div>
+      <div class="paper">
+        <p id="wishMessage"></p>
+      </div>
     </div>
   </div>
 
