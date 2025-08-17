@@ -1,172 +1,94 @@
-/* ========== Global Styles ========== */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
   text-align: center;
   color: #333;
 }
 
-/* ========== Header ========== */
 .header {
-  background: #fff;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.college-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  background: #ff7eb3;
+  color: white;
+  padding: 10px;
 }
 
 .college-strip {
-  height: 45px;
-}
-
-.college-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #222;
-}
-
-.club-logo {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  height: 50px;
 }
 
 .logo {
-  width: 55px;
-  height: 55px;
+  height: 60px;
 }
 
-.club-logo h1 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #444;
-}
-
-/* ========== Wishes Container ========== */
 .container {
-  margin: 40px auto;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.95);
-  width: 90%;
-  max-width: 600px;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.container h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.container p {
-  color: #555;
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 input {
-  padding: 12px;
-  margin: 10px 0;
-  width: 65%;
-  border: 2px solid #66a6ff;
-  border-radius: 8px;
-  outline: none;
-  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
 }
 
 button {
-  padding: 12px 25px;
-  background: linear-gradient(135deg, #66a6ff, #4b8cff);
-  border: none;
-  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #ff7eb3;
   color: white;
-  font-size: 16px;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #4b8cff, #3757d9);
-  transform: scale(1.05);
+  background: #ff4f81;
 }
 
-/* ========== Letter Animation ========== */
+/* Envelope animation */
 .letter {
-  display: none;
-  margin-top: 25px;
+  margin: 20px auto;
+  width: 250px;
+  height: 180px;
   position: relative;
+  perspective: 1000px;
 }
 
 .envelope {
-  width: 220px;
-  height: 130px;
-  background: #f39c12;
-  margin: auto;
-  position: relative;
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  background: #ff7eb3;
+  border-radius: 5px;
+  position: absolute;
 }
 
 .paper {
-  width: 190px;
+  width: 90%;
+  height: 120px;
   background: white;
-  margin: auto;
-  padding: 18px;
-  border-radius: 6px;
-  position: relative;
-  top: -90px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  transform: translateY(100px);
-  opacity: 0;
-  transition: all 0.6s ease-in-out;
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  transform: translateY(180px);
+  transition: transform 1s;
+  padding: 10px;
 }
 
-.letter.show .paper {
+.letter.open .paper {
   transform: translateY(0);
-  opacity: 1;
 }
 
-.paper p {
-  margin: 0;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #333;
+/* Login Page */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
 }
 
-/* ========== Quotes Section ========== */
-.quotes {
-  margin: 40px auto;
-  padding: 25px;
-  max-width: 700px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-.quotes h2 {
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.quote-box {
-  font-style: italic;
-  font-size: 18px;
-  color: #222;
-  animation: fadeInOut 5s infinite;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
