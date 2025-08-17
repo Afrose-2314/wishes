@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Teachers' Day Wishes</title>
+  <title>Teachers' Day Wishes 🎉</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
-  <div class="login-container">
-    <h1>🎉 Teachers' Day Wishes 🎉</h1>
-    <p>Enter your name to unlock your special wish 💌</p>
-    <form onsubmit="return goToWishes()">
-      <input type="text" id="username" placeholder="Enter your name" required>
-      <button type="submit">Open Wishes ✨</button>
-    </form>
+<body class="main-body">
+  <div class="envelope-container">
+    <!-- Envelope -->
+    <div class="envelope" onclick="openEnvelope()">
+      <div class="flap"></div>
+      <div class="letter">
+        <h2 id="wishText">🌸 Happy Teachers' Day 🌸</h2>
+        <p class="quote">“A teacher takes a hand, opens a mind, and touches a heart.”</p>
+        <p class="from">💖 With Love from Coding Club 💻</p>
+      </div>
+    </div>
+    <!-- Click instruction -->
+    <p class="click-text">📩 Click the envelope to reveal your special wish 🎊</p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
