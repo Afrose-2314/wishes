@@ -1,53 +1,75 @@
+/* General Body */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   background: linear-gradient(135deg, #ffecd2, #fcb69f);
   text-align: center;
   color: #333;
 }
 
+/* Header */
 .header {
   background: #ff7eb3;
   color: white;
-  padding: 10px;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* College Top Strip */
 .college-strip {
   height: 50px;
+  background: #fff3f6;
 }
 
 .logo {
   height: 60px;
+  margin-top: 5px;
 }
 
+/* Container */
 .container {
-  margin-top: 20px;
+  margin-top: 30px;
+  padding: 15px;
 }
 
+/* Input & Button */
 input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #aaa;
+  width: 250px;
+  margin: 10px 0;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff7eb3;
+  box-shadow: 0 0 5px rgba(255, 126, 179, 0.5);
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 25px;
   margin-top: 10px;
   background: #ff7eb3;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 button:hover {
   background: #ff4f81;
 }
 
-/* Envelope animation */
+/* Envelope Animation */
 .letter {
-  margin: 20px auto;
-  width: 250px;
+  margin: 30px auto;
+  width: 260px;
   height: 180px;
   position: relative;
   perspective: 1000px;
@@ -59,18 +81,22 @@ button:hover {
   background: #ff7eb3;
   border-radius: 5px;
   position: absolute;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
 .paper {
   width: 90%;
-  height: 120px;
+  height: 130px;
   background: white;
   position: absolute;
   top: 20px;
   left: 5%;
   transform: translateY(180px);
-  transition: transform 1s;
-  padding: 10px;
+  transition: transform 1s ease-in-out;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  overflow-y: auto;
 }
 
 .letter.open .paper {
@@ -88,7 +114,20 @@ button:hover {
 
 .login-container {
   background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
