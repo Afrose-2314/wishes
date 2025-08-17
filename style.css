@@ -1,4 +1,4 @@
-/* General Body */
+/* General Styling */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -12,58 +12,52 @@ body {
   background: #ff7eb3;
   color: white;
   padding: 15px;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* College Top Strip */
 .college-strip {
   height: 50px;
-  background: #fff3f6;
+  display: block;
+  margin: 0 auto;
 }
 
 .logo {
-  height: 60px;
-  margin-top: 5px;
+  height: 70px;
+  margin-top: 10px;
 }
 
 /* Container */
 .container {
-  margin-top: 30px;
-  padding: 15px;
+  margin-top: 20px;
 }
 
-/* Input & Button */
+/* Inputs and Buttons */
 input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #aaa;
-  width: 250px;
-  margin: 10px 0;
   outline: none;
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: #ff7eb3;
-  box-shadow: 0 0 5px rgba(255, 126, 179, 0.5);
+  width: 220px;
+  font-size: 16px;
 }
 
 button {
   padding: 10px 25px;
-  margin-top: 10px;
+  margin-top: 15px;
   background: #ff7eb3;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
   background: #ff4f81;
+  transform: scale(1.05);
 }
 
 /* Envelope Animation */
@@ -79,28 +73,49 @@ button:hover {
   width: 100%;
   height: 100%;
   background: #ff7eb3;
-  border-radius: 5px;
+  border-radius: 8px;
   position: absolute;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .paper {
   width: 90%;
-  height: 130px;
+  height: 120px;
   background: white;
   position: absolute;
   top: 20px;
   left: 5%;
   transform: translateY(180px);
-  transition: transform 1s ease-in-out;
-  padding: 12px;
+  transition: transform 1s;
+  padding: 15px;
   border-radius: 5px;
-  font-size: 14px;
-  overflow-y: auto;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
 }
 
 .letter.open .paper {
   transform: translateY(0);
+}
+
+/* Quotes Section */
+.quotes {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 700px;
+  font-size: 18px;
+  font-style: italic;
+  color: #444;
+  background: #fff5f7;
+  border-left: 6px solid #ff7eb3;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.quotes p {
+  margin: 15px 0;
 }
 
 /* Login Page */
@@ -118,16 +133,33 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
   text-align: center;
+  width: 320px;
   animation: fadeIn 1s ease-in-out;
 }
 
 .login-container h2 {
   margin-bottom: 15px;
-  color: #444;
+  font-weight: 700;
+  color: #333;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo {
+    height: 50px;
+  }
+
+  input {
+    width: 180px;
+  }
+
+  .quotes {
+    font-size: 16px;
+    padding: 15px;
+  }
 }
