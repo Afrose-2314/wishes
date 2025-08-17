@@ -3,104 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teachers' Day Login</title>
+  <title>Login - Teachers' Day Wishes</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
-      animation: gradientBG 8s ease infinite alternate;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    .login-container {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      width: 320px;
-      animation: fadeIn 1.2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .login-container h2 {
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #ff4081;
-    }
-
-    .login-container p {
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #444;
-    }
-
-    .login-container input {
-      width: 90%;
-      padding: 12px;
-      border: 2px solid #ff4081;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      outline: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .login-container input:focus {
-      border-color: #e91e63;
-      box-shadow: 0 0 8px rgba(233, 30, 99, 0.5);
-    }
-
-    .login-container button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: #ff4081;
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .login-container button:hover {
-      background: #e91e63;
-      transform: scale(1.05);
-    }
-  </style>
 </head>
-<body>
+<body class="login-body">
   <div class="login-container">
-    <h2>Teachers' Day Wishes 💌</h2>
-    <p>Enter your name to continue</p>
-    <input type="text" id="userName" placeholder="Your Name" />
-    <button onclick="login()">Enter</button>
+    <h1>💐 Teachers' Day Wishes 💐</h1>
+    <p class="sub-text">Enter your name to receive a surprise wish 🎁</p>
+    <form onsubmit="return saveName()">
+      <input type="text" id="username" placeholder="Enter your name" required>
+      <button type="submit">Send Wishes ✉️</button>
+    </form>
   </div>
 
   <script>
-    function login() {
-      const name = document.getElementById("userName").value.trim();
-      if (name) {
-        localStorage.setItem("userName", name);
-        window.location.href = "index.html";
-      } else {
+    function saveName() {
+      const name = document.getElementById("username").value.trim();
+      if (name === "") {
         alert("Please enter your name!");
+        return false;
       }
+      localStorage.setItem("username", name); 
+      window.location.href = "index.html"; 
+      return false; 
     }
   </script>
 </body>
