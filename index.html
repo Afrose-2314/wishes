@@ -1,83 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teachers' Day Wishes – Coding Club</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers' Day Wishes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top College Strip -->
-  <header class="topbar">
-    <div class="brand">
-      <!-- College Logo -->
-      <img
-        src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png"
-        alt="College Logo"
-        class="logo"
-      />
-
-      <div class="titles">
-        <h1>Prince Shri Venkateswara Arts & Science College</h1>
-        <div class="club-info">
-          <!-- Coding Club Logo -->
-          <img src="logo.jpg" alt="Coding Club Logo" class="club-logo" />
-          <p class="club-text">Coding Club – BCA Dept</p>
-        </div>
-      </div>
+  <div class="container">
+    <!-- Logo and header -->
+    <div class="header">
+      <img src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png" alt="College Logo" class="logo">
+      <h1>Coding Club - PSVPEC</h1>
     </div>
-  </header>
 
-  <!-- Main App -->
-  <main class="container">
-    <section class="card">
-      <h2>Teachers' Day Wishes Generator</h2>
-      <p class="hint">Enter your teacher’s name and send a unique animated wish ✨</p>
+    <!-- Input box -->
+    <div class="input-box">
+      <input type="text" id="teacherName" placeholder="Enter Teacher's Name">
+      <button onclick="generateWish()">Send Wish</button>
+    </div>
 
-      <div class="form">
-        <input id="nameInput" type="text" placeholder="Enter Teacher Name (e.g., Ms. Priya)" />
-        <button id="wishBtn" class="btn primary">Create Wish</button>
-        <button id="resetBtn" class="btn ghost" aria-label="Reset">Reset</button>
-      </div>
-
-      <!-- Envelope + Letter -->
-      <div class="stage">
-        <div class="envelope" id="envelope">
-          <div class="env-back"></div>
-          <div class="env-front">
-            <div class="flap"></div>
-            <div class="stamp">💌</div>
-            <div class="seal">PSVASC</div>
-          </div>
-
-          <div class="letter" id="letter">
-            <div class="letter-inner">
-              <div class="letter-head">
-                <span class="from">Coding Club – BCA</span>
-                <span class="date" id="today"></span>
-              </div>
-              <h3 class="to" id="toName">Dear Teacher,</h3>
-              <p class="quote" id="quoteText"></p>
-              <p class="closing">
-                With respect and gratitude,<br/>
-                <strong>Coding Club Students</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Actions -->
-      <div class="share-tips">
-        Tip: Take a screenshot after the animation and share via WhatsApp/Email 📤
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="foot">
-    <span>Made with ❤️ by Coding Club – BCA Dept</span>
-  </footer>
+    <!-- Animated Letter -->
+    <div class="letter" id="letter">
+      <div class="letter-content" id="letterContent"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
