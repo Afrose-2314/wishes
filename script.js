@@ -1,29 +1,35 @@
-// script.js
-
-function showWishes() {
-  const nameInput = document.getElementById("nameInput").value.trim();
-  const messageBox = document.getElementById("wishMessage");
-  const envelope = document.querySelector(".letter");
-
-  if (nameInput === "") {
-    alert("Please enter your name before continuing.");
-    return;
+// Handle Login
+function login() {
+  const name = document.getElementById("userName").value.trim();
+  if (name) {
+    localStorage.setItem("userName", name);
+    window.location.href = "index.html";
+  } else {
+    alert("Please enter your name!");
   }
+}
 
-  // Wish message with love from Coding Club
-  const wishes = `
-    🌸 Happy Teachers' Day, ${nameInput}! 🌸  
-    <br><br>
-    "A teacher takes a hand, opens a mind, and touches a heart forever." 💡  
-    <br><br>
-    Thank you dear teachers for your guidance, wisdom, and endless patience.  
-    <br><br>
-    ❤️ With love from Coding Club 💖
-  `;
+// Quotes for Teachers
+const quotes = [
+  "A teacher takes a hand, opens a mind, and touches a heart.",
+  "Teaching is the profession that teaches all other professions.",
+  "Good teachers inspire hope, ignite the imagination, and instill a love of learning.",
+  "A great teacher is like a candle—it consumes itself to light the way for others.",
+  "Teachers plant seeds of knowledge that grow forever."
+];
 
-  // Show message in paper (inside envelope)
-  messageBox.innerHTML = wishes;
+// Show Wish with Name
+window.onload = function () {
+  if (document.getElementById("wishText")) {
+    const name = localStorage.getItem("userName") || "Dear Teacher";
+    document.getElementById("wishText").innerText =
+      `Happy Teachers' Day, ${name}! 🎉`;
+    document.querySelector(".quote").innerText =
+      quotes[Math.floor(Math.random() * quotes.length)];
+  }
+};
 
-  // Open the envelope animation
-  envelope.classList.add("open");
+// Envelope Animation
+function openEnvelope() {
+  document.querySelector(".envelope").classList.add("open");
 }
