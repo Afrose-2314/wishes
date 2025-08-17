@@ -1,33 +1,35 @@
+/* ========== Global Styles ========== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
   text-align: center;
   color: #333;
 }
 
-/* Header */
+/* ========== Header ========== */
 .header {
   background: #fff;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .college-info {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .college-strip {
-  height: 50px;
+  height: 45px;
 }
 
 .college-name {
   font-size: 18px;
+  font-weight: bold;
   color: #222;
 }
 
@@ -35,103 +37,136 @@ body {
   margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 }
 
 .club-logo h1 {
   font-size: 20px;
+  font-weight: 600;
   color: #444;
 }
 
-/* Wishes Container */
+/* ========== Wishes Container ========== */
 .container {
   margin: 40px auto;
-  padding: 20px;
-  background: #fff;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
   width: 90%;
   max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container p {
+  color: #555;
+  margin-bottom: 15px;
 }
 
 input {
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  width: 60%;
+  width: 65%;
   border: 2px solid #66a6ff;
   border-radius: 8px;
+  outline: none;
+  font-size: 15px;
 }
 
 button {
-  padding: 10px 20px;
-  background: #66a6ff;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #66a6ff, #4b8cff);
   border: none;
   border-radius: 8px;
   color: white;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  background: #4b8cff;
+  background: linear-gradient(135deg, #4b8cff, #3757d9);
+  transform: scale(1.05);
 }
 
-/* Letter Animation */
+/* ========== Letter Animation ========== */
 .letter {
   display: none;
-  margin-top: 20px;
+  margin-top: 25px;
+  position: relative;
 }
 
 .envelope {
-  width: 200px;
-  height: 120px;
+  width: 220px;
+  height: 130px;
   background: #f39c12;
   margin: auto;
   position: relative;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .paper {
-  width: 180px;
+  width: 190px;
   background: white;
   margin: auto;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 18px;
+  border-radius: 6px;
   position: relative;
-  top: -80px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  top: -90px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.letter.show .paper {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .paper p {
   margin: 0;
-  font-weight: bold;
+  font-weight: 500;
+  line-height: 1.5;
   color: #333;
 }
 
-/* Quotes Section */
+/* ========== Quotes Section ========== */
 .quotes {
   margin: 40px auto;
-  padding: 20px;
+  padding: 25px;
   max-width: 700px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.quotes h2 {
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .quote-box {
-  margin-top: 15px;
   font-style: italic;
   font-size: 18px;
   color: #222;
-  animation: fadeIn 2s infinite alternate;
+  animation: fadeInOut 5s infinite;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
