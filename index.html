@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Teachers' Day Wishes 🎉</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="main-body">
-  <div class="envelope-container">
-    <div class="envelope" onclick="openEnvelope()">
-      <div class="flap"></div>
-      <div class="letter">
-        <h2 id="wishText">✨ Happy Teachers' Day ✨</h2>
-        <p class="quote">"A teacher takes a hand, opens a mind, and touches a heart."</p>
-        <p class="from">💖 With Love from Coding Club 💻</p>
+  <header class="topbar">
+    <div class="brand">
+      <img
+        class="club-logo"
+        src="https://admission.psvpec.in/wp-content/uploads/2025/03/Frame-40765-1.png"
+        alt="Coding Club Logo"
+      />
+      <div class="brand-text">
+        <h3>Prince Shri Venkateswara Arts & Science College</h3>
+        <p>Coding Club — BCA Dept</p>
       </div>
     </div>
-    <p class="click-text">Click the envelope to reveal your special wish 🎊</p>
-  </div>
+    <div class="user-slot">
+      <span id="helloUser"></span>
+      <button id="logoutBtn" class="btn-ghost">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Teachers' Day Wishes Generator</h2>
+      <p class="tip">Type your teacher's name and create a beautiful wish card.</p>
+
+      <div class="controls">
+        <input id="teacherName" type="text" placeholder="Enter teacher's name" required />
+        <div class="btn-row">
+          <button class="btn-primary" id="createBtn">Create Wish</button>
+          <button class="btn-danger" id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <!-- Animated wish popup -->
+      <div id="wishPopup" class="wish-popup hidden" role="dialog" aria-modal="true">
+        <div class="wish-pointer"></div>
+        <div class="wish-lines">
+          <div class="line">🌸 Dear <b id="w-teacher">Teacher</b>,</div>
+          <div class="line">You are a guide, mentor and inspiration. 💫</div>
+          <div class="line">Wishing you a very <b>Happy Teachers' Day!</b> 🎉</div>
+          <div class="line">With respect and gratitude,</div>
+          <div class="line"><b id="w-student">Student</b> & Coding Club Students</div>
+          <div class="line"><b>PSVASC</b></div>
+        </div>
+        <button id="closePopup" class="btn-ghost close-btn">Close</button>
+      </div>
+    </section>
+
+    <p class="tiny-tip">Tip: Take a screenshot after the animation and share via WhatsApp/Email 📸</p>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by Coding Club — BCA Dept</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
