@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teachers' Day Wishes 🎉</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Teachers' Day Wishes</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="main-body">
-  <div class="envelope-container">
-    <!-- Envelope -->
-    <div class="envelope" onclick="openEnvelope()">
-      <div class="flap"></div>
-      <div class="letter">
-        <h2 id="wishText">🌸 Happy Teachers' Day 🌸</h2>
-        <p class="quote">“A teacher takes a hand, opens a mind, and touches a heart.”</p>
-        <p class="from">💖 With Love from Coding Club 💻</p>
-      </div>
-    </div>
-    <!-- Click instruction -->
-    <p class="click-text">📩 Click the envelope to reveal your special wish 🎊</p>
+<body class="login-body">
+  <div class="login-card">
+    <h1>🎓 Coding Club — BCA Dept</h1>
+    <h2>Teachers' Day Wishes Generator</h2>
+
+    <form id="loginForm" class="login-form">
+      <input id="username" type="text" placeholder="Enter your name" autocomplete="name" required />
+      <button type="submit" class="btn-primary">Enter</button>
+    </form>
+
+    <p class="sub-note">No password needed — just your name 👍</p>
   </div>
 
   <script src="script.js"></script>
