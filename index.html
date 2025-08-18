@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="main-body">
+  
+  <!-- Top Bar -->
   <header class="topbar">
     <div class="brand">
       <img class="club-logo" src="logo.jpg" alt="Coding Club Logo" />
@@ -21,36 +23,38 @@
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
     <section class="card">
-      <h2>Teachers' Day Wishes</h2>
-      <p class="tip">Type your teacher’s name and create a beautiful memory.</p>
+      <h2>🌸 Teachers' Day Wishes 🌸</h2>
+      <p class="tip">Enter your teacher’s name and create a beautiful memory.</p>
 
       <div class="controls">
         <input id="teacherName" type="text" placeholder="Enter teacher's name" required />
         <div class="btn-row">
-          <button class="btn-primary" id="createBtn">Create Wish</button>
-          <button class="btn-danger" id="resetBtn">Reset</button>
+          <button id="createBtn" class="btn-primary">✨ Create Wish</button>
+          <button id="resetBtn" class="btn-danger">🔄 Reset</button>
         </div>
       </div>
 
-      <!-- Wish Popup -->
+      <!-- Popup -->
       <div id="wishPopup" class="wish-popup hidden" role="dialog" aria-modal="true">
-        <div class="wish-lines">
-          <div class="line">🌸 Dear <b id="w-teacher">Teacher</b>,</div>
-          <div class="line">You are a guide, mentor and inspiration. 💫</div>
-          <div class="line">Wishing you a very <b>Happy Teachers' Day!</b> 🎉</div>
-          <div class="line">With respect and gratitude,</div>
-          <div class="line">Coding Club — BCA Dept,</div>
-          <div class="line"><b>PSVASC</b></div>
+        <div class="wish-content">
+          <p>🌼 Dear <b id="w-teacher">Teacher</b>,</p>
+          <p>You are a guide, mentor and inspiration. 💫</p>
+          <p>Wishing you a very <b>Happy Teachers' Day!</b> 🎉</p>
+          <p>With respect and gratitude,</p>
+          <p><b>Coding Club — BCA Dept</b></p>
+          <p><b>PSVASC</b></p>
         </div>
-        <button id="closePopup" class="btn-ghost close-btn">Close</button>
+        <button id="closePopup" class="btn-ghost close-btn">Close ❌</button>
       </div>
     </section>
 
-    <p class="tiny-tip">📸 Tip: Take a screenshot after creating your wish and share it with your teachers!</p>
+    <p class="tiny-tip">📸 Tip: Take a screenshot of your wish and share it with your teachers!</p>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>Made with ❤️ by Coding Club — BCA Dept</p>
   </footer>
@@ -58,4 +62,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
