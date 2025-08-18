@@ -1,30 +1,50 @@
+// script.js
+
+// When page loads, show logged in user
 document.addEventListener("DOMContentLoaded", () => {
-  const teacherNameInput = document.getElementById("teacherName");
+  const username = localStorage.getItem("username");
+  if (username) {
+    document.getElementById("helloUser").textContent = `👋 Hello, ${username}`;
+  }
+
+  // logout
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("username");
+      window.location.href = "login.html";
+    });
+  }
+
+  // create wish button
   const createBtn = document.getElementById("createBtn");
   const resetBtn = document.getElementById("resetBtn");
+  const teacherNameInput = document.getElementById("teacherName");
   const wishPopup = document.getElementById("wishPopup");
-  const wTeacher = document.getElementById("w-teacher");
   const closePopup = document.getElementById("closePopup");
+  const wTeacher = document.getElementById("w-teacher");
 
-  // Create Wish
-  createBtn.addEventListener("click", () => {
-    const tName = teacherNameInput.value.trim();
-    if (tName) {
-      wTeacher.textContent = tName; // Insert teacher’s name
-      wishPopup.classList.remove("hidden"); // Show popup
-    } else {
-      alert("Please enter your teacher's name 🙏");
-    }
-  });
+  if (createBtn) {
+    createBtn.addEventListener("click", () => {
+      const tName = teacherNameInput.value.trim();
+      if (tName === "") {
+        alert("Please enter your teacher's name 🙏");
+        return;
+      }
+      wTeacher.textContent = tName;
+      wishPopup.classList.remove("hidden");
+    });
+  }
 
-  // Reset Input
-  resetBtn.addEventListener("click", () => {
-    teacherNameInput.value = "";
-    wishPopup.classList.add("hidden");
-  });
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      teacherNameInput.value = "";
+    });
+  }
 
-  // Close Popup
-  closePopup.addEventListener("click", () => {
-    wishPopup.classList.add("hidden");
-  });
+  if (closePopup) {
+    closePopup.addEventListener("click", () => {
+      wishPopup.classList.add("hidden");
+    });
+  }
 });
