@@ -1,111 +1,199 @@
-/* -------- Base -------- */
+/* ========== Base Styles ========== */
 * { box-sizing: border-box; }
+
 :root {
-  --bg1: #0f172a; --bg2: #1e293b; --bg3: #334155;
-  --glass: rgba(255,255,255,.1);
-  --white: #fff; --muted: #cbd5e1;
-  --primary: #3b82f6; --danger: #ef4444;
+  --bg1: #0f172a;
+  --bg2: #1e293b;
+  --bg3: #334155;
+  --glass: rgba(255, 255, 255, 0.1);
+  --white: #fff;
+  --muted: #cbd5e1;
+  --primary: #3b82f6;
+  --danger: #ef4444;
   --ok: #22c55e;
 }
-html, body { height: 100%; }
-body {
+
+html, body {
+  height: 100%;
   margin: 0;
   font-family: system-ui, -apple-system, "Poppins", Segoe UI, Roboto, Arial, sans-serif;
   color: var(--white);
 }
 
-/* -------- Login -------- */
+/* ========== Login Page ========== */
 .login-body {
   min-height: 100vh;
+  display: grid;
+  place-items: center;
   background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-  display: grid; place-items: center;
   animation: hue 14s linear infinite alternate;
 }
-@keyframes hue { to { filter: hue-rotate(25deg); } }
+
+@keyframes hue {
+  to { filter: hue-rotate(25deg); }
+}
 
 .login-card {
   width: min(92vw, 440px);
-  background: var(--glass);
   padding: 28px;
+  text-align: center;
   border-radius: 18px;
+  background: var(--glass);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  text-align: center;
 }
-.login-card h1 { margin: 0 0 6px; font-size: 1.3rem; }
-.login-card h2 { margin: 0 0 16px; font-weight: 600; font-size: 1rem; color: var(--muted); }
-.login-form { display: grid; gap: 12px; margin-top: 8px; }
-.login-form input {
-  padding: 12px 14px; border-radius: 10px; border: 0; width: 100%;
-}
-.sub-note { margin-top: 8px; color: var(--muted); font-size: .85rem; }
 
-/* Buttons */
-.btn-primary, .btn-danger, .btn-ghost {
-  border: 0; border-radius: 10px; cursor: pointer; font-weight: 600;
-  padding: 10px 16px;
+.login-card h1 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
 }
+
+.login-card h2 {
+  margin: 0 0 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.login-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.sub-note {
+  margin-top: 8px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* ========== Buttons ========== */
+.btn-primary,
+.btn-danger,
+.btn-ghost {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .btn-primary { background: var(--primary); color: #fff; }
-.btn-danger { background: var(--danger); color: #fff; }
-.btn-ghost  { background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,.2); }
+.btn-danger  { background: var(--danger);  color: #fff; }
+.btn-ghost   { background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,.2); }
+
 .btn-primary:hover { filter: brightness(1.05); }
 .btn-danger:hover  { filter: brightness(1.05); }
 .btn-ghost:hover   { border-color: rgba(255,255,255,.35); color: #fff; }
 
-/* -------- Main -------- */
+/* ========== Main Page ========== */
 .main-body {
   min-height: 100vh;
+  padding-bottom: 40px;
   background: radial-gradient(1200px 1200px at 10% -10%, #1f2a44 0, transparent 60%),
               linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-  padding-bottom: 40px;
 }
 
 .topbar {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 18px min(6vw, 32px);
 }
-.brand { display: flex; align-items: center; gap: 12px; }
-.club-logo { width: 64px; height: 64px; object-fit: contain; border-radius: 50%; background: #e6f0ff; }
-.brand-text h3 { margin: 0; font-size: 1.05rem; }
-.brand-text p  { margin: 4px 0 0; color: var(--muted); }
 
-.user-slot { display: flex; gap: 10px; align-items: center; }
-#helloUser { color: #c7e0ff; font-weight: 600; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-main { display: grid; place-items: center; padding: 0 min(6vw, 32px); }
+.club-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #e6f0ff;
+}
+
+.brand-text h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.brand-text p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.user-slot {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#helloUser {
+  font-weight: 600;
+  color: #c7e0ff;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  padding: 0 min(6vw, 32px);
+}
 
 .card {
   width: min(92vw, 640px);
-  background: var(--glass);
   padding: 24px;
   border-radius: 18px;
+  background: var(--glass);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
+
 .card h2 { margin: 0 0 6px; }
-.tip { margin: 0 0 18px; color: var(--muted); }
+.tip     { margin: 0 0 18px; color: var(--muted); }
 
 .controls { display: grid; gap: 12px; }
 .controls input {
   padding: 12px 14px;
-  border-radius: 10px; border: 0;
-  background: rgba(255,255,255,.92); color: #0f172a;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(255,255,255,.92);
+  color: #0f172a;
 }
-.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 .tiny-tip {
   margin: 16px 0 0;
-  font-size: .9rem; color: var(--muted);
   text-align: center;
+  font-size: .9rem;
+  color: var(--muted);
 }
 
-footer { text-align: center; color: var(--muted); margin-top: 26px; }
+footer {
+  margin-top: 26px;
+  text-align: center;
+  color: var(--muted);
+}
 
-/* -------- Wish popup (balloon/triangle style) -------- */
+/* ========== Wish Popup ========== */
 .wish-popup {
   position: relative;
-  width: 100%;
   max-width: 460px;
+  width: 100%;
   margin: 18px auto 0;
   padding: 16px 14px;
   border-radius: 14px;
@@ -113,27 +201,55 @@ footer { text-align: center; color: var(--muted); margin-top: 26px; }
   border: 1px solid rgba(255,255,255,.15);
   animation: pop 400ms ease both, floaty 4s ease-in-out infinite;
 }
+
 .hidden { display: none; }
 
-@keyframes pop { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-@keyframes floaty { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-4px); } }
+@keyframes pop {
+  from { transform: scale(.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-4px); }
+}
 
 .wish-pointer {
-  position: absolute; left: 36px; top: -24px;
-  width: 0; height: 0;
+  position: absolute;
+  top: -24px;
+  left: 36px;
+  width: 0;
+  height: 0;
   border-left: 18px solid transparent;
   border-right: 18px solid transparent;
   border-bottom: 24px solid rgba(0,0,0,.55);
   filter: drop-shadow(0 -2px 0 rgba(255,255,255,.15));
 }
 
-.wish-lines { display: grid; gap: 8px; text-align: left; }
-.wish-lines .line { background: rgba(255,255,255,.06); padding: 8px 10px; border-radius: 10px; }
+.wish-lines {
+  display: grid;
+  gap: 8px;
+  text-align: left;
+}
+
+.wish-lines .line {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+}
+
 .close-btn { margin-top: 10px; }
 
-/* Confetti for fun */
+/* Confetti decoration */
 .wish-popup::after {
-  content: "✨🎉🎊"; position: absolute; right: 10px; top: -10px; font-size: 20px;
+  content: "✨🎉🎊";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 20px;
   animation: spin 6s linear infinite;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
